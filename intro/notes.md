@@ -26,3 +26,21 @@
 * string
 * boolean
 ## Non-Primitive
+### Linear
+* Static
+    * Array
+* Dynamic
+    * Linked List
+    * Stack
+    * Queue
+### Non-Linear
+* Tree
+* Graph
+
+# Types of Algorithms
+* Simple recursive algorithms
+* Divide and conquer algorithms
+* Dynamic programming algorithms
+* Greedy algorithms
+* Brute force algorithms
+* Randomized algorithms
