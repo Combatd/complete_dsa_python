@@ -17,3 +17,12 @@
 * Solutions to many problems in software development can be found on the internet, but how do you know which is the correct solution?
 * Even with more powerful machines, bad code can still make a computer slow down or run out of memory.
 * Algorithms show employers problem solving skills and programming fundamentals in a limited time frame.
+
+# Types of Data Structures
+## Primitive
+* integer
+* float
+* character
+* string
+* boolean
+## Non-Primitive
