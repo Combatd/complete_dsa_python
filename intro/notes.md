@@ -11,3 +11,9 @@
 * Dijkstra's Algorithm - shortest path
 * Optimization and Scheduling Algorithms
 * Criteria for good algorithms - correct and efficient
+
+# Why are data structures and algorithms important?
+* Take data as an input, process it, and give the processed data as an output
+* Solutions to many problems in software development can be found on the internet, but how do you know which is the correct solution?
+* Even with more powerful machines, bad code can still make a computer slow down or run out of memory.
+* Algorithms show employers problem solving skills and programming fundamentals in a limited time frame.
