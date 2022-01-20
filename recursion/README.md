@@ -52,3 +52,26 @@ def recursiveMethod(n):
 ```
 
 # Recursive vs Iterative Solutions
+* Any problem that can be solved recursively can be solved iteratively.
+* Sometimes, converting a recursion to an iteration solution is difficult.
+* Recursion repeatedly invokes the mechaism over method calls, adding a new layer to the stack memory. - time and space inefficient.
+* Dealing with graph algorithms and other complex abstract data types is more efficienty to use recursion, because we know that a problem can be divided into similar sub-problems.
+* Many complicated codes can be written in recursion very easily, even if iteration can be more time and space efficient in other cases.
+
+```
+def powerOfTwo(n):
+    if n == 0:
+        rturn 1
+    else:
+        power = powerOfTwo(n - 1)
+        return power * 2
+```
+```
+def powerOfTwoIt(n):
+    i = 0
+    power = 1
+    while i < n:
+        power = power * 2
+        i = i + 1
+    return power
+```
