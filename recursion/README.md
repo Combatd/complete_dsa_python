@@ -75,3 +75,16 @@ def powerOfTwoIt(n):
         i = i + 1
     return power
 ```
+
+# When to Use/Avoid Recursion?
+## When to use it?
+* The recursion is always used when we can easily breakdown a problem into similar subproblems.
+* When we are fine with extra overhead (both time and space) that comes with it
+* When we need a quick working solution instead of efficient ones
+* When we traverse a tree data structure
+* When we use memoization in recursion, and then the time complexity is reduced
+    * By saving the value of each calculation for further use in the recursive call, you can reduce the time complexity.
+## When to avoid it?
+* If time and space complexity matters for us.
+* Recursion uses more memory. If we use embedded memory. For example, an application that takes more memory in the phone is not efficient.
+* Recursion can be slow.
