@@ -88,3 +88,18 @@ def powerOfTwoIt(n):
 * If time and space complexity matters for us.
 * Recursion uses more memory. If we use embedded memory. For example, an application that takes more memory in the phone is not efficient.
 * Recursion can be slow.
+
+# How to write Recursion in 3 steps?
+## Factorial
+* It is the product of all positive integers less than or equal to n
+* Denoted by n!
+* Only positive integers
+* 0! = 1
+
+* Exmaple 1
+    * 4! = 4 * 3 * 2 * 1 = 2^4
+* Example 2
+    * 10! = 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 3,628,800
+
+## Step 1: Recursive case - the flow
+n! = n * (n - 1) * (n - 2) * ..... * 2 * 1
