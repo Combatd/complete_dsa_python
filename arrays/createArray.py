@@ -22,3 +22,11 @@ def accessElement(array, index): # Space Complexity: O1()
         print(array[index]) # O(1) Time
 
 accessElement(arr1, 6)
+
+def searchInArray(array, value): # Space Complexity = O(1)
+    for i in array: # O(n) Time
+        if i == value: # O(1) Time
+            return array.index(value) # O(n) Time as it will search for the index containing the atching i and value
+    return "The element does not exist in this array" # O(n)
+
+print(searchInArray(arr1, 3))
