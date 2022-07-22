@@ -30,3 +30,9 @@ def searchInArray(array, value): # Space Complexity = O(1)
     return "The element does not exist in this array" # O(n)
 
 print(searchInArray(arr1, 3))
+
+
+print(arr1)
+arr1.remove(4) # Space Complexity: O(1), Time Complexity: O(n)
+
+print(arr1)
