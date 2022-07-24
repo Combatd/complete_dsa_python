@@ -1,4 +1,5 @@
 from array import *
+from secrets import token_bytes
 
 # 1. Create an array and traverse
 
@@ -74,3 +75,10 @@ print(ints)
 # 14. Convert array to a python list with some elements using tolist() method
 print("Step 14")
 # print(my_array.tolist())
+
+# 15. Append a string to char array using frombytes() method
+# May need list for this problem
+
+# 16. Slice elements from an array
+print("Step 16")
+print(my_array[:])
