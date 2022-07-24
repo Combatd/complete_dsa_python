@@ -17,3 +17,9 @@ print(my_array[3])
 print("Step 3")
 my_array.append(6)
 print(my_array)
+
+# 4. Insert value in an array using insert() method
+
+print("Step 4")
+my_array.insert(3, 11)
+print(my_array)
