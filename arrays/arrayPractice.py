@@ -59,7 +59,14 @@ print(my_array)
 print("Step 11")
 print(my_array.buffer_info())
 
-# 11. Check for number of occurences through count() method
+# 12. Check for number of occurences through count() method
 print("Step 12")
 my_array.append(11)
 print(my_array.count(11))
+
+# 13. Convert array to string using tobytes() method
+print("Step 13")
+strTemp = my_array.tobytes()
+print(strTemp)
+ints = array('i')
+print(ints)
