@@ -58,3 +58,8 @@ print(my_array)
 # 11. Get array buffer information through buffer_info() method
 print("Step 11")
 print(my_array.buffer_info())
+
+# 11. Check for number of occurences through count() method
+print("Step 12")
+my_array.append(11)
+print(my_array.count(11))
