@@ -54,3 +54,7 @@ print(my_array.index(21))
 print("Step 10")
 my_array.reverse()
 print(my_array)
+
+# 11. Get array buffer information through buffer_info() method
+print("Step 11")
+print(my_array.buffer_info())
