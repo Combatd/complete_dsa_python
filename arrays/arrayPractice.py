@@ -70,3 +70,7 @@ strTemp = my_array.tobytes()
 print(strTemp)
 ints = array('i')
 print(ints)
+
+# 14. Convert array to a python list with some elements using tolist() method
+print("Step 14")
+# print(my_array.tolist())
