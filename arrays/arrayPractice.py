@@ -7,3 +7,7 @@ my_array = array('i', [1, 2, 3, 4, 5])
 for i in my_array:
     print(i, ' <- traverse and printing out elements one by one')
 
+# 2. Access individual eleemnts through indees
+print("Step 2")
+print(my_array[0])
+print(my_array[3])
