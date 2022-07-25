@@ -6,5 +6,13 @@ print(twoDArray)
 # newTwoDArray = np.insert(twoDArray, 0, [[1, 2, 3, 4]], axis=0)
 # print(newTwoDArray)
 
-newTwoDArray = np.append(twoDArray, [[1, 2, 3, 4]], axis=0)
-print(newTwoDArray)
+# newTwoDArray = np.append(twoDArray, [[1, 2, 3, 4]], axis=0)
+# print(newTwoDArray)
+
+def accessElements(array, rowIndex, colIndex):
+    if rowIndex >= len(array) and colIndex >= len(array[0]):
+        print("Incorrect index")
+    else:
+        print(array[rowIndex][colIndex])
+
+accessElements(twoDArray, 2, 3)
