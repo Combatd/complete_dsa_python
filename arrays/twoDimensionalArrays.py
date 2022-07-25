@@ -17,7 +17,7 @@ def accessElements(array, rowIndex, colIndex):
 
 accessElements(twoDArray, 2, 3)
 
-def traverse2DArray(array): # Space Complexity: O(1) Time Complexity: O(n^2)
+def traverse2DArray(array): # Time Complexity: O(n^2), Space Complexity: O(1) 
     for i in range(len(array)): # O(mn) as it is rows and columns
         for j in range(len(array[0])): # 0(n) to access columns
             print(array[i][j]) # O(1)
@@ -25,11 +25,11 @@ def traverse2DArray(array): # Space Complexity: O(1) Time Complexity: O(n^2)
 traverse2DArray(twoDArray)
 
 # Linear Search
-def search2DArray(array, value):
-    for i in range(len(array)):
-        for j in range(len(array[0])):
-            if array[i][j] == value:
-                return "The value is located at index " + str(i) + " " + str(j)
-    return "The element is not found"
+def search2DArray(array, value): # Time Complexity: O(n^2) , Space Complexity: O(1)
+    for i in range(len(array)): # O(mn)
+        for j in range(len(array[0])): # O(n)
+            if array[i][j] == value: # O(1)
+                return "The value is located at index " + str(i) + " " + str(j) # O(n)
+    return "The element is not found" # O(1)
 
 print(search2DArray(twoDArray, 14))
