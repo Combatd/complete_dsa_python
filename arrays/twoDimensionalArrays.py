@@ -33,3 +33,6 @@ def search2DArray(array, value): # Time Complexity: O(n^2) , Space Complexity: O
     return "The element is not found" # O(1)
 
 print(search2DArray(twoDArray, 14))
+
+new2DArray = np.delete(twoDArray, 1, axis = 1) # 0 axis for deleting rows and 1 for deleting columns
+print(new2DArray)
