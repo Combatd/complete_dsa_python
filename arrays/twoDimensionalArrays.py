@@ -23,3 +23,13 @@ def traverse2DArray(array): # Space Complexity: O(1) Time Complexity: O(n^2)
             print(array[i][j]) # O(1)
 
 traverse2DArray(twoDArray)
+
+# Linear Search
+def search2DArray(array, value):
+    for i in range(len(array)):
+        for j in range(len(array[0])):
+            if array[i][j] == value:
+                return "The value is located at index " + str(i) + " " + str(j)
+    return "The element is not found"
+
+print(search2DArray(twoDArray, 14))
