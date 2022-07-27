@@ -7,22 +7,31 @@
 # a = a * 4
 # print(a) # Multiple copies of list a
 
-a = [0, 1, 2, 3, 4, 5, 6]
-print(len(a))
-print(max(a))
-print(min(a))
-print(sum(a))
-print(sum(a) / len(a))
+# a = [0, 1, 2, 3, 4, 5, 6]
+# print(len(a))
+# print(max(a))
+# print(min(a))
+# print(sum(a))
+# print(sum(a) / len(a))
 
-list = []
-while True:
-    inp = input('Enter a number: ')
-    if (inp == 'done'): break
-    value = float(inp)
-    list.append(value)
-    total = sum(list)
-    count = len(list)
-    average = total / count
+# list = []
+# while True:
+#     inp = input('Enter a number: ')
+#     if (inp == 'done'): break
+#     value = float(inp)
+#     list.append(value)
+#     total = sum(list)
+#     count = len(list)
+#     average = total / count
 
-print("Average: ", average)
+# print("Average: ", average)
     
+# a = 'spam'
+# b = list(a)
+# print(b)
+
+a = 'spam-spam1-spam2'
+delimiter = '-'
+b = a.split(delimiter)
+print(b)
+print(delimiter.join(b))
