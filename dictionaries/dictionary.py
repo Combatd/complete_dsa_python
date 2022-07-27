@@ -19,3 +19,13 @@ def traverseDict(dict): # Time Complexity: O(n), Space Compleixty: O(1)
         print(key, dict[key]) # O(1)
 
 traverseDict(myDict)
+
+# Linear Search
+def searchDict(dict, value): # Time Complexity: O(n), Space Complexity: O(1)
+    for key in dict: # O(n)
+        if dict[key] == value: # O(1)
+            return key, value # O(1)
+    return 'The value does not exist' # O(1)
+
+print(searchDict(myDict, 27))
+print(searchDict(myDict, 26))
