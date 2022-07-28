@@ -51,6 +51,21 @@ class SLinkedList:
                 print(node.value) # Time: O(1)
                 node = node.next # Time: O(1)
 
+    # Search for a node in Singly Linked List
+    # Time Complexity: O(n) Space Complexity: O(1)
+    def searchSLL(self, nodeValue):
+        if self.head is None: # O(1)
+            return 'The list does not exist' # O(1)
+        else:
+            node = self.head # O(1)
+            while node is not None: # O(n)
+                if node.value == nodeValue: # O(n)
+                    return node.value # O(1)
+                node = node.next # O(1)
+            return 'The value does not exist in this list' # O(1)
+
+
+
 singlyLinkedList = SLinkedList()
 singlyLinkedList.insertSLL(1, 1)
 singlyLinkedList.insertSLL(2, 1)
@@ -61,3 +76,5 @@ singlyLinkedList.insertSLL(0, 0)
 singlyLinkedList.insertSLL(0, 4)
 print([node.value for node in singlyLinkedList])
 singlyLinkedList.traverseSLL()
+print(singlyLinkedList.searchSLL(3))
+print(singlyLinkedList.searchSLL(33))
