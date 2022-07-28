@@ -7,12 +7,45 @@ class SLinkedList:
     def __init__(self): # Time: O(1) Space: O(1)
         self.head = None # Time: O(1)
         self.tail = None # Time: O(1)
+    
+    def __iter__(self):
+        node = self.head
+        while node:
+            yield node
+            node = node.next
+
+    # Insert in Linked List
+    def insertSLL(self, value, location):
+        newNode = Node(value)
+        if self.head is None:
+            self.head = newNode
+            self.tail = newNode
+        else:
+            if location == 0: # start of Linked List
+                newNode.next = self.head
+                self.head = newNode
+            elif location == 1: # node after start of Linked List
+                newNode.next = None
+                self.tail.next = newNode
+                self.tail = newNode
+            else:
+                tempNode = self.head
+                index = 0
+                while index < location - 1:
+                    tempNode = tempNode.next
+                    index += 1
+                nextNode = tempNode.next
+                tempNode.next = newNode
+                newNode.next = nextNode
+                if tempNode == self.tail:
+                    self.tail = newNode
 
 singlyLinkedList = SLinkedList()
-node1 = Node(1)
-node2 = Node(2)
+singlyLinkedList.insertSLL(1, 1)
+singlyLinkedList.insertSLL(2, 1)
+singlyLinkedList.insertSLL(3, 1)
+singlyLinkedList.insertSLL(4, 1)
 
-# Time: O(1)
-singlyLinkedList.head = node1
-singlyLinkedList.head.next = node2
-singlyLinkedList.tail = node2
+singlyLinkedList.insertSLL(0, 0)
+singlyLinkedList.insertSLL(0, 4)
+print([node.value for node in singlyLinkedList])
