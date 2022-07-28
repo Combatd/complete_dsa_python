@@ -64,7 +64,38 @@ class SLinkedList:
                 node = node.next # O(1)
             return 'The value does not exist in this list' # O(1)
 
-
+    # Delete a node from Singly Linked List
+    # Time Complexity; O(n) Space Complexity: O(1)
+    def deleteNode(self, location):
+        if self.head is None:
+            print('The Singly Linked List does not exist')
+        else:
+            if location == 0:
+                if self.head == self.tail: # if only one node exists, Time: O(1)
+                    self.head = None # Time: O(1)
+                    self.tail = None # Time: O(1)
+                else:
+                    self.head = self.head.next
+            elif location == 1: # if targeting the last node, Time: O(1)
+                if self.head == self.tail: # Time: O)1
+                    self.head = None
+                    self.tail = None
+                else:
+                    node = self.head
+                    while node is not None: # Time: O(n)
+                        if node.next == self.tail:
+                            break
+                        node = node.next
+                    node.next = None
+                    self.tail = node
+            else:
+                tempNode = self.head
+                index = 0
+                while index < location - 1: # Time O(n)
+                    tempNode = tempNode.next
+                    index += 1
+                nextNode = tempNode.next
+                tempNode.next = nextNode.next
 
 singlyLinkedList = SLinkedList()
 singlyLinkedList.insertSLL(1, 1)
@@ -74,7 +105,11 @@ singlyLinkedList.insertSLL(4, 1)
 
 singlyLinkedList.insertSLL(0, 0)
 singlyLinkedList.insertSLL(0, 4)
+
 print([node.value for node in singlyLinkedList])
 singlyLinkedList.traverseSLL()
 print(singlyLinkedList.searchSLL(3))
 print(singlyLinkedList.searchSLL(33))
+
+singlyLinkedList.deleteNode(3)
+print([node.value for node in singlyLinkedList])
