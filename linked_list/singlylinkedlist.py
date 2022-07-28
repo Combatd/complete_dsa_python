@@ -97,6 +97,17 @@ class SLinkedList:
                 nextNode = tempNode.next
                 tempNode.next = nextNode.next
 
+
+    # Time Complexity: O(1) Space Complexity: O(1)
+    def deleteEntireSLL(self): 
+        if self.head == None: # Time: O(1)
+            print("The Single Linked List does not exist") # Time: O)1)
+        else: # O(1)
+            self.head = None # Time: O(1)
+            self.tail = None # Time: O(1)
+
+
+
 singlyLinkedList = SLinkedList()
 singlyLinkedList.insertSLL(1, 1)
 singlyLinkedList.insertSLL(2, 1)
@@ -112,4 +123,7 @@ print(singlyLinkedList.searchSLL(3))
 print(singlyLinkedList.searchSLL(33))
 
 singlyLinkedList.deleteNode(3)
+print([node.value for node in singlyLinkedList])
+
+singlyLinkedList.deleteEntireSLL()
 print([node.value for node in singlyLinkedList])
