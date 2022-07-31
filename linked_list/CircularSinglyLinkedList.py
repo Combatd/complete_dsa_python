@@ -37,7 +37,7 @@ class CircularSinglyLinkedList:
                 newNode.next = self.head
                 self.head = newNode
                 self.tail.next = newNode # Circles around
-            elif location == 1:
+            elif location == -1:
                 newNode.next = self.tail.next
                 self.tail.next = newNode
                 self.tail = newNode
