@@ -52,6 +52,22 @@ class CircularSinglyLinkedList:
                 newNode.next = nextNode
             return "The node has been successfully inserted"
 
+    # Traversal of a node in Circular Singly Linked List
+    # Time Complexity: O(n) Space Complexity: O(1)
+    def traversalCSLL(self):
+        if self.head is None:
+            print("There is no element for traversal")
+        else:
+            tempNode = self.head
+            while tempNode: # O(n)
+                print(tempNode.value)
+                tempNode = tempNode.next
+                if tempNode == self.tail.next:
+                    break
+        
+
+
+
 circularSLL = CircularSinglyLinkedList()
 print(circularSLL.createCSLL(1))
 
@@ -60,6 +76,6 @@ print(circularSLL.insertCSLL(2, 1)) # insert at tail
 print(circularSLL.insertCSLL(3, 1))
 print(circularSLL.insertCSLL(2, 2))
 
-
+print(circularSLL.traversalCSLL())
 
 print([node.value for node in circularSLL])
