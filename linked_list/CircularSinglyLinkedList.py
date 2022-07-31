@@ -64,6 +64,20 @@ class CircularSinglyLinkedList:
                 tempNode = tempNode.next
                 if tempNode == self.tail.next:
                     break
+
+    # Linear Search of a node in Circular Singly Linked List
+    # Time Complexity: O(n) Space Complexity: O(1)
+    def searchCSLL(self, nodeValue):
+        if self.head is None: # O(1)
+            return "There is not any node in this Circular Singly Linked List"
+        else:
+            tempNode = self.head # O(1)
+            while tempNode: # O(1)
+                if tempNode.value == nodeValue:
+                    return tempNode.value
+                tempNode = tempNode.next
+                if tempNode == self.tail.next:
+                    return "The node does not exist in this Circular Singly Linked List"
         
 
 
@@ -77,5 +91,6 @@ print(circularSLL.insertCSLL(3, 1))
 print(circularSLL.insertCSLL(2, 2))
 
 print(circularSLL.traversalCSLL())
+print(circularSLL.searchCSLL(3))
 
 print([node.value for node in circularSLL])
