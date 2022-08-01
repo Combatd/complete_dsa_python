@@ -115,6 +115,12 @@ class CircularSinglyLinkedList:
                 nextNode = tempNode.next
                 tempNode.next = nextNode.next
 
+    # Delete entire Circular Singly Linked List: garbage collection eliminates all the nodes
+    # Time Complexity: O(1) Space Complexity: O(1)
+    def deleteEntireCSLL(self):
+        self.head = None # O(1)
+        self.tail.next = None # O(1)
+        self.tail = None # O(1)
 
 circularSLL = CircularSinglyLinkedList()
 print(circularSLL.createCSLL(0))
@@ -130,4 +136,7 @@ print(circularSLL.searchCSLL(3))
 print([node.value for node in circularSLL])
 
 circularSLL.deleteNode(0)
+print([node.value for node in circularSLL])
+
+circularSLL.deleteEntireCSLL()
 print([node.value for node in circularSLL])
