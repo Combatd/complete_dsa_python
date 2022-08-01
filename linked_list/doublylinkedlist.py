@@ -68,6 +68,16 @@ class DoublyLinkedList:
                 print("Value of tempNode: ", tempNode.value) # O(1)
                 tempNode = tempNode.next # O(1)
 
+    # Reverse Traversal Method in Doubly Linked List
+    # Time Complexity: O(n) Space Complexity: O(1)
+    def reverseTraversalDLL(self):
+        if self.head is None:
+            print("There is not one node in the Doubly Linked List to traverse") # O(1)
+        else:
+            tempNode = self.tail # O(1)
+            while tempNode: # O(n)
+                print("Value of tempNode: ", tempNode.value) #O(1)
+                tempNode = tempNode.prev # O(1)
 
 
 doublyLL = DoublyLinkedList()
@@ -81,3 +91,4 @@ doublyLL.insertNode(6,2)
 
 print([node.value for node in doublyLL])
 doublyLL.traversalDLL()
+doublyLL.reverseTraversalDLL()
