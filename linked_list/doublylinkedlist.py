@@ -121,6 +121,21 @@ class DoublyLinkedList:
                 currentNode.next = currentNode.next.next
                 currentNode.next.prev = currentNode
             print("The node was successfully deleted")
+        
+    #  Delete entire Doubly Linked List
+    # Time Complexity: O(n) Space Complexity: O(1)
+    def deleteDLL(self):
+        if self.head is None: # O(1)
+            print("There are no nodes in DLL")
+        else:
+            tempNode = self.head # O(1)
+            while tempNode: # O(n)
+                tempNode.prev = None
+                tempNode = tempNode.next
+            self.head = None # O(1)
+            self.tail = None # O(1)
+            print('The Doubly Linked List was successfully deleted')
+
 
 
 
@@ -141,4 +156,7 @@ print(doublyLL.searchDLL(6))
 print(doublyLL.searchDLL(7))
 
 doublyLL.deleteNode(1)
+print([node.value for node in doublyLL])
+
+doublyLL.deleteDLL()
 print([node.value for node in doublyLL])
