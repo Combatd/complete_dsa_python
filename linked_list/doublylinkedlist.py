@@ -57,6 +57,16 @@ class DoublyLinkedList:
                 newNode.next.prev = newNode # O(n)
                 tempNode.next = newNode # O(n)
 
+    # Traversal Method in Doubly Linked List
+    # Time Complexity: O(n) Space Complexity: O(1)
+    def traversalDLL(self):
+        if self.head is None: # O(1)
+            print("There is not any element to traverse") # O(1)
+        else: # O(1)
+            tempNode = self.head # O(1)
+            while tempNode: # O(n)
+                print("Value of tempNode: ", tempNode.value) # O(1)
+                tempNode = tempNode.next # O(1)
 
 
 
@@ -70,3 +80,4 @@ doublyLL.insertNode(2,-1)
 doublyLL.insertNode(6,2)
 
 print([node.value for node in doublyLL])
+doublyLL.traversalDLL()
