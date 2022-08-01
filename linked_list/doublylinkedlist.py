@@ -29,9 +29,44 @@ class DoublyLinkedList:
         self.tail = node # O(1)
         return 'The Doubly Linked List is created successfully'
 
+    # Insertion Method in Doubly Linked List
+    # Time Complexity: O(n) Space Complexity: O(1)
+    def insertNode(self, nodeValue, location):
+        if self.head is None: # O(1)
+            print("The node cannot be inserted") # O(1)
+        else:
+            newNode = Node(nodeValue) # O(1)
+            if location == 0: # O(1)
+                newNode.prev = None
+                newNode.next = self.head
+                self.head.prev = newNode
+                self.head = newNode
+            elif location == -1: # O(1)
+                newNode.next = None
+                newNode.prev = self.tail
+                self.tail.next = newNode
+                self.tail = newNode
+            else:
+                tempNode = self.head # O(1)
+                index = 0 # O(1)
+                while index < location - 1: # O(n)
+                    tempNode = tempNode.next
+                    index += 1
+                newNode.next = tempNode.next # O(1)
+                newNode.prev = tempNode # O(n)
+                newNode.next.prev = newNode # O(n)
+                tempNode.next = newNode # O(n)
+
+
 
 
 doublyLL = DoublyLinkedList()
 doublyLL.createDLL(5)
+
+print([node.value for node in doublyLL])
+
+doublyLL.insertNode(0,0)
+doublyLL.insertNode(2,-1)
+doublyLL.insertNode(6,2)
 
 print([node.value for node in doublyLL])
