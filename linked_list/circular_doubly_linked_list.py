@@ -102,6 +102,44 @@ class CircularDoublyLinkedList:
                     return "The value does not exist in Circular Doubly Linked List" # O(1)
                 tempNode = tempNode.next # O(1)
 
+    # Delete a node in Circular Doubly Linked List
+    # Time Complexity: O(n) Space Complexity: O(1)
+    def deleteNode(self, location):
+        if self.head is None: # O(1)
+            print('There are no nodes to delete in the Circular Doubly Linked List')
+        else:
+            if location == 0: # O(1)
+                if self.head == self.tail: # O(1)
+                    self.head.prev = None
+                    self.head.next = None
+                    self.head = None
+                    self.tail = None
+                else: # O(1)
+                    self.head = self.head.next
+                    self.head.prev = self.tail
+                    self.tail.next = self.head
+            elif location == -1: # O(1)
+                if self.head == self.tail:
+                    self.head.prev = None
+                    self.head.next = None
+                    self.head = None
+                    self.tail = None
+                else: # O(1)
+                    self.tail = self.tail.prev
+                    self.tail.next = self.head
+                    self.head.prev = self.tail
+            else:
+                currentNode = self.head # O(1)
+                index = 0 # O(1)
+                while index < location - 1: # O(n)
+                    currentNode = currentNode.next
+                    index += 1
+                currentNode.next = currentNode.next.next # O(1)
+                currentNode.next.prev = currentNode # O(1)
+            print("The node has been successfully deleted")
+
+
+
 circularDLL = CircularDoublyLinkedList()
 print(circularDLL.createCDLL(5))
 print(circularDLL.insertCDLL(0,0))
@@ -116,3 +154,6 @@ circularDLL.reverseTraversalCDLL()
 print([node.value for node in circularDLL])
 print(circularDLL.searchCDLL(2))
 print(circularDLL.searchCDLL(6))
+
+circularDLL.deleteNode(1)
+print([node.value for node in circularDLL])
