@@ -75,6 +75,18 @@ class CircularDoublyLinkedList:
                     break # O(1)
                 tempNode = tempNode.next # O(1)
 
+    # Reverse Traversal of Circular Doubly Linked List
+    # Time Complexity: O(n) Space Complexity: O(1)
+    def reverseTraversalCDLL(self):
+        if self.head is None: # O(1)
+            print("There are no nodes for reverse traversal")
+        else:
+            tempNode = self.tail # O(1)
+            while tempNode: # O(n)
+                print(tempNode.value) # O(1)
+                if tempNode == self.head: # O(1)
+                    break
+                tempNode = tempNode.prev # O(1)
 
 circularDLL = CircularDoublyLinkedList()
 print(circularDLL.createCDLL(5))
@@ -84,3 +96,5 @@ print(circularDLL.insertCDLL(2, 2))
 
 print([node.value for node in circularDLL])
 circularDLL.traversalCDLL()
+print([node.value for node in circularDLL])
+circularDLL.reverseTraversalCDLL()
