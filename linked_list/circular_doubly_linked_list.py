@@ -88,6 +88,20 @@ class CircularDoublyLinkedList:
                     break
                 tempNode = tempNode.prev # O(1)
 
+    # Search Circular Doubly Linked List
+    # Time Complexity: O(n) Space Complexity: O(1)
+    def searchCDLL(self, nodeValue):
+        if self.head is None:
+            return "There are no nodes in the Circular Doubly Linked List" # O(1)
+        else:
+            tempNode = self.head # O(1)
+            while tempNode: # O(n)
+                if tempNode.value == nodeValue:
+                    return tempNode.value # O(1)
+                if tempNode == self.tail:
+                    return "The value does not exist in Circular Doubly Linked List" # O(1)
+                tempNode = tempNode.next # O(1)
+
 circularDLL = CircularDoublyLinkedList()
 print(circularDLL.createCDLL(5))
 print(circularDLL.insertCDLL(0,0))
@@ -98,3 +112,7 @@ print([node.value for node in circularDLL])
 circularDLL.traversalCDLL()
 print([node.value for node in circularDLL])
 circularDLL.reverseTraversalCDLL()
+
+print([node.value for node in circularDLL])
+print(circularDLL.searchCDLL(2))
+print(circularDLL.searchCDLL(6))
