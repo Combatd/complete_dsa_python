@@ -138,6 +138,20 @@ class CircularDoublyLinkedList:
                 currentNode.next.prev = currentNode # O(1)
             print("The node has been successfully deleted")
 
+    # Delete entire Circular Doubly Linked List
+    # Time Complexity: O(n) Space Complexity: O(1)
+    def deleteCDLL(self):
+        if self.head is None:
+            print("There are no nodes to delete") # O(1)
+        else:
+            self.tail.next = None # O(1)
+            tempNode = self.head # O(1)
+            while tempNode: # will stop on a falsy value, O(n)
+                tempNode.prev = None
+                tempNode = tempNode.next
+            self.head = None # O(1)
+            self.tail = None # O(1)
+            print("The Circular Doubly Linked List has been successfully deleted") # O(1)
 
 
 circularDLL = CircularDoublyLinkedList()
@@ -156,4 +170,7 @@ print(circularDLL.searchCDLL(2))
 print(circularDLL.searchCDLL(6))
 
 circularDLL.deleteNode(1)
+print([node.value for node in circularDLL])
+
+circularDLL.deleteCDLL()
 print([node.value for node in circularDLL])
