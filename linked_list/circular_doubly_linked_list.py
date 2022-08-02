@@ -62,6 +62,20 @@ class CircularDoublyLinkedList:
                 tempNode.next = newNode
         return "The node has been sucessfully inserted"
 
+    # Traversal of Circular Doubly Linked List
+    # Time Complexity: O(n) Space Complexity: O(1)
+    def traversalCDLL(self):
+        if self.head is None: # O(1)
+            print("There are no nodes for traversal")
+        else:
+            tempNode = self.head # O(1)
+            while tempNode: # O(n)
+                print(tempNode.value) # O(1)
+                if tempNode == self.tail: # O(1)
+                    break # O(1)
+                tempNode = tempNode.next # O(1)
+
+
 circularDLL = CircularDoublyLinkedList()
 print(circularDLL.createCDLL(5))
 print(circularDLL.insertCDLL(0,0))
@@ -69,3 +83,4 @@ print(circularDLL.insertCDLL(1, -1))
 print(circularDLL.insertCDLL(2, 2))
 
 print([node.value for node in circularDLL])
+circularDLL.traversalCDLL()
