@@ -41,6 +41,12 @@ class Stack:
         else:
             return self.list[len(self.list) - 1]
 
+    # delete
+    # Time Complexity: O(1)
+    # Space Complexity: O(1)
+    def delete(self):
+        self.list = None
+
 
 customStack = Stack()
 print(customStack.isEmpty())
