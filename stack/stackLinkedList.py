@@ -22,7 +22,7 @@ class Stack:
         self.LinkedList = LinkedList()
 
     def __str__(self):
-        values = [str(x) for x in self.LinkedList]
+        values = [str(x.value) for x in self.LinkedList]
         return '\n'.join(values)
 
     # Time Cmoplexity: O(1)
