@@ -32,6 +32,15 @@ class Stack:
         else:
             return self.list.pop()
 
+    # peek
+    # Time Complexity: O(1)
+    # Space Complexity: O(1)
+    def peek(self):
+        if self.isEmpty():
+            return "There is not any element in the stack"
+        else:
+            return self.list[len(self.list) - 1]
+
 
 customStack = Stack()
 print(customStack.isEmpty())
@@ -41,3 +50,4 @@ print(customStack.push(3))
 
 customStack.pop()
 print(customStack)
+print("peek ->", customStack.peek())
