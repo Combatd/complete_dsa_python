@@ -23,10 +23,21 @@ class Stack:
         self.list.append(value)
         return "The element has been successfully inserted"
 
+    # pop
+    # Time Complexity: O(1)
+    # Space Complexity: O(1)
+    def pop(self):
+        if self.isEmpty():
+            return "There is not any element in the stack"
+        else:
+            return self.list.pop()
+
 
 customStack = Stack()
 print(customStack.isEmpty())
 print(customStack.push(1))
 print(customStack.push(2))
 print(customStack.push(3))
+
+customStack.pop()
 print(customStack)
