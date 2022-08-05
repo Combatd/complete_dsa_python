@@ -1,4 +1,6 @@
 from logging import root
+from operator import le
+from turtle import pos
 
 
 class TreeNode:
@@ -38,6 +40,18 @@ def inOrderTraversal(rootNode):
     print(rootNode.data) # O(1)
     inOrderTraversal(rootNode.rightChild) # O(n / 2)
 
+# Time: O(n)
+# Space: O(n)
+def postOrderTraversal(rootNode):
+    if not rootNode: # O(1)
+        return
+
+    postOrderTraversal(rootNode.leftChild) # O(n / 2)
+    postOrderTraversal(rootNode.rightChild) # O(n / 2)
+    print(rootNode.data) # O(1)
+
+
 
 preOrderTraversal(newBT)
 inOrderTraversal(newBT)
+postOrderTraversal(newBT)
