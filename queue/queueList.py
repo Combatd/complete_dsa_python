@@ -12,13 +12,13 @@ class Queue:
         else:
             return False
 
-    # Time Complexity: Amortized O(1) - has to reserve more memory
+    # Time Complexity: O(n)
     # Space Complexity: O(1)
     def enqueue(self, value):
         self.items.append(value)
         return "The element is inserted at the end of Queue"
 
-    # Time Complexity: O(1)
+    # Time Complexity: O(n)
     # Space Complexity: O(1)
     def dequeue(self):
         if self.isEmpty():
