@@ -1,6 +1,4 @@
-from logging import root
-from operator import le
-from turtle import pos
+from queueLinkedList import Queue
 
 
 class TreeNode:
@@ -50,8 +48,24 @@ def postOrderTraversal(rootNode):
     postOrderTraversal(rootNode.rightChild) # O(n / 2)
     print(rootNode.data) # O(1)
 
+# Time: O(n)
+# Space: O(n) - need to create a queue and go through all elements
+def levelOrderTraversal(rootNode):
+    if not rootNode: # O(1)
+        return
+    else:
+        customQueue = Queue() # O(1)
+        customQueue.enqueue(rootNode) # O(1)
+        while not(customQueue.isEmpty()): # O(n)
+            root = customQueue.dequeue()
+            print(root.value.data)
+            if root.value.leftChild is not None:
+                customQueue.enqueue(root.value.leftChild)
 
+            if root.value.rightChild is not None:
+                customQueue.enqueue(root.value.rightChild)
 
 preOrderTraversal(newBT)
 inOrderTraversal(newBT)
 postOrderTraversal(newBT)
+levelOrderTraversal(newBT)
