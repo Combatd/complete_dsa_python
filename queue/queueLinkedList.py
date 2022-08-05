@@ -49,8 +49,48 @@ class Queue:
             self.LinkedList.tail.next = newNode
             self.LinkedList.tail = newNode
 
+    # Time: O(1)
+    # Space: O(1)
+    def isEmpty(self):
+        if self.LinkedList.head == None:
+            return True
+        else:
+            return False
+
+    # Time: O(1)
+    # Space: O(1)
+    def dequeue(self):
+        if self.isEmpty():
+            return "There are no nodes in the queue"
+        else:
+            tempNode = self.LinkedList.head
+            if self.LinkedList.head == self.LinkedList.tail:
+                self.LinkedList.head = None
+                self.LinkedList.tail = None
+            else:
+                self.LinkedList.head = self.LinkedList.head.next
+            return tempNode
+    
+    # Time: O(1)
+    # Space: O(1)
+    def peek(self):
+        if self.isEmpty():
+            return "There are no nodes in the queue"
+        else:
+            return self.LinkedList.head
+
+    # Time: O(1)
+    # Space: O(1)
+    def delete(self): # Singly Linked List you only have to set head and tail to None
+        self.LinkedList.head = None 
+        self.LinkedList.tail = None
+
+
 custQueue = Queue()
 custQueue.enqueue(1)
 custQueue.enqueue(2)
 custQueue.enqueue(3)
 print(custQueue)
+print(custQueue.dequeue(), " <- deque")
+print(custQueue)
+print(custQueue.peek(), "<- peek")
