@@ -48,3 +48,9 @@ class Queue:
         else:
             self.LinkedList.tail.next = newNode
             self.LinkedList.tail = newNode
+
+custQueue = Queue()
+custQueue.enqueue(1)
+custQueue.enqueue(2)
+custQueue.enqueue(3)
+print(custQueue)
