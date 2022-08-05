@@ -1,3 +1,6 @@
+from logging import root
+
+
 class TreeNode:
     # Time: O(1)
     # Space: O(1)
@@ -25,4 +28,16 @@ def preOrderTraversal(rootNode):
     preOrderTraversal(rootNode.leftChild) # O(n / 2) recursion step
     preOrderTraversal(rootNode.rightChild) # O(n / 2) recursion step
 
+# Time:
+# Space:
+def inOrderTraversal(rootNode):
+    if not rootNode: # O(1)
+        return
+
+    inOrderTraversal(rootNode.leftChild) # O(n / 2)
+    print(rootNode.data) # O(1)
+    inOrderTraversal(rootNode.rightChild) # O(n / 2)
+
+
 preOrderTraversal(newBT)
+inOrderTraversal(newBT)
