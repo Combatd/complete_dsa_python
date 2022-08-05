@@ -28,8 +28,8 @@ def preOrderTraversal(rootNode):
     preOrderTraversal(rootNode.leftChild) # O(n / 2) recursion step
     preOrderTraversal(rootNode.rightChild) # O(n / 2) recursion step
 
-# Time:
-# Space:
+# Time: O(n)
+# Space: O(n)
 def inOrderTraversal(rootNode):
     if not rootNode: # O(1)
         return
