@@ -15,9 +15,15 @@ class TreeNode:
 newBT = TreeNode("Drinks")
 leftChild = TreeNode('Hot')
 rightChild = TreeNode('Cold')
+
+tea = TreeNode("Tea")
+coffee = TreeNode("Coffee")
+leftChild.leftChild = tea
+rightChild.rightChild = coffee
+rightChild = TreeNode('Cold')
+
 newBT.leftChild = leftChild
 newBT.rightChild = rightChild
-
 # Time: O(n)
 # Space: O(n)
 def preOrderTraversal(rootNode):
@@ -65,7 +71,30 @@ def levelOrderTraversal(rootNode):
             if root.value.rightChild is not None:
                 customQueue.enqueue(root.value.rightChild)
 
+# Time; O(n)
+# Space: O(n)
+def searchBT(rootNode, nodeValue):
+    if not rootNode:
+        return "The Binary Tree does not exist"
+    else:
+        customQueue = Queue()
+        customQueue.enqueue(rootNode)
+        while not(customQueue.isEmpty()):
+            root = customQueue.dequeue()
+            if root.value.data == nodeValue:
+                return "Success -> " + str(nodeValue)
+
+            if root.value.leftChild is not None:
+                customQueue.enqueue(root.value.leftChild)
+
+            if root.value.rightChild is not None:
+                customQueue.enqueue(root.value.rightChild)
+    return "Not Found"
+
+
+
 preOrderTraversal(newBT)
 inOrderTraversal(newBT)
 postOrderTraversal(newBT)
 levelOrderTraversal(newBT)
+print(searchBT(newBT, "Tea"))
