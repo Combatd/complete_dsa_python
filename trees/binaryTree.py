@@ -160,24 +160,50 @@ def deleteDeepestNode(rootNode, dNode):
                 else:
                     customQueue.enqueue(root.value.leftChild)
 
+# Time: O(n)
+# Space: O(n)
+def deleteNodeBT(rootNode, node):
+    if not rootNode:
+        return
+    else:
+        customQueue = Queue()
+        customQueue.enqueue(rootNode)
+        while not(customQueue.isEmpty()):
+            root = customQueue.dequeue()
+            if root.value.data == node:
+                dNode = getDeepestNode(rootNode)
+                root.value.data = dNode.data
+                deleteDeepestNode(rootNode, dNode)
+                return "The node has been successfully deleted"
+
+            if root.value.leftChild is not None:
+                customQueue.enqueue(root.value.leftChild)
+
+            if root.value.rightChild is not None:
+                customQueue.enqueue(root.value.rightChild)
+        return "Failed to delete"
 
 
-deepestNode = getDeepestNode(newBT)
-print(deepestNode.data, "<- deepestNode")
-newNode = getDeepestNode(newBT)
-deleteDeepestNode(newBT, newNode)
+
+deleteNodeBT(newBT, "Tea")
 levelOrderTraversal(newBT)
 
-preOrderTraversal(newBT)
-inOrderTraversal(newBT)
-postOrderTraversal(newBT)
-levelOrderTraversal(newBT)
-print(searchBT(newBT, "Tea"))
+# deepestNode = getDeepestNode(newBT)
+# print(deepestNode.data, "<- deepestNode")
+# newNode = getDeepestNode(newBT)
+# deleteDeepestNode(newBT, newNode)
+# levelOrderTraversal(newBT)
 
-newNode = TreeNode("Cola")
-print(insertNodeBT(newBT, newNode))
-levelOrderTraversal(newBT)
+# preOrderTraversal(newBT)
+# inOrderTraversal(newBT)
+# postOrderTraversal(newBT)
+# levelOrderTraversal(newBT)
+# print(searchBT(newBT, "Tea"))
 
-newNode = getDeepestNode(newBT)
-deleteDeepestNode(newBT, newNode)
-levelOrderTraversal(newBT)
+# newNode = TreeNode("Cola")
+# print(insertNodeBT(newBT, newNode))
+# levelOrderTraversal(newBT)
+
+# newNode = getDeepestNode(newBT)
+# deleteDeepestNode(newBT, newNode)
+# levelOrderTraversal(newBT)
