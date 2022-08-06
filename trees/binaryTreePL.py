@@ -67,6 +67,11 @@ class BinaryTree:
                 self.customList[self.lastUsedIndex] = None # Delete the Node
                 self.lastUsedIndex -= 1
                 return "The node has been successfully deleted"
+    # Time: O(1)
+    # Space: O(1)
+    def deleteBT(self):
+        self.customList = None
+        return "The Binary Tree has been successfully deleted"
 
 
 newBT = BinaryTree(8)
@@ -87,3 +92,6 @@ newBT.levelOrderTraversal(1)
 
 print(newBT.deleteNode("Tea"))
 newBT.levelOrderTraversal(1)
+
+print(newBT.deleteBT())
+newBT.levelOrderTraversal(1) # This will throw an error because there is no more list
