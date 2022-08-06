@@ -1,6 +1,4 @@
-
-from logging import root
-
+from queueLinkedList import Queue
 
 class BSTNode:
     # Time: O(1)
@@ -56,6 +54,21 @@ def postOrderTraversal(rootNode):
     postOrderTraversal(rootNode.rightChild)
     print(rootNode.data)
 
+# Time: O(n)
+# Space: O(n)
+def levelOrderTraversal(rootNode):
+    if not rootNode:
+        return
+    else:
+        customQueue = Queue()
+        customQueue.enqueue(rootNode)
+        while not(customQueue.isEmpty()):
+            root = customQueue.dequeue()
+            print(root.value.data)
+            if root.value.leftChild is not None:
+                customQueue.enqueue(root.value.leftChild)
+            if root.value.rightChild is not None:
+                customQueue.enqueue(root.value.rightChild)
 
 newBST = BSTNode(None)
 print(insertNode(newBST, 70))
@@ -70,3 +83,4 @@ print(insertNode(newBST, 40))
 preOrderTraversal(newBST)
 inOrderTraversal(newBST)
 postOrderTraversal(newBST)
+levelOrderTraversal(newBST)
