@@ -86,7 +86,38 @@ def searchNode(rootNode, nodeValue):
         else:      
             searchNode(rootNode.rightChild, nodeValue) # O(n / 2)
 
+# Time:
+# Space:
+def minValueNode(bstNode):
+    current = bstNode
+    while (current.leftChild is not None):
+        current = current.leftChild
+    return current
 
+
+# Time:
+# Space:
+def deleteNode(rootNode, nodeValue):
+    if rootNode is None:
+        return rootNode
+    if nodeValue < rootNode.data:
+        rootNode.leftChild = deleteNode(rootNode.leftChild, nodeValue) # O(n / 2)
+    elif nodeValue > rootNode.data:
+        rootNode.rightChild = deleteNode(rootNode.rightChild,nodeValue) # O(n / 2)
+    else:
+        if rootNode.leftChild is None:
+            temp = rootNode.rightChild
+            rootNode = None
+            return temp
+
+        if rootNode.rightChild is None:
+            temp = rootNode.leftChild
+            rootNode = None
+            return temp
+
+        temp = minValueNode(rootNode.rightChild) # O(log n)
+        rootNode.data = temp.data
+        rootNode.rightChild = deleteNode(rootNode.rightChild, temp.data) # O(n / 2)
 
 
 
@@ -105,3 +136,5 @@ inOrderTraversal(newBST)
 postOrderTraversal(newBST)
 levelOrderTraversal(newBST)
 searchNode(newBST, 60)
+deleteNode(newBST, 20)
+levelOrderTraversal(newBST)
