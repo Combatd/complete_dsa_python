@@ -86,8 +86,6 @@ def searchNode(rootNode, nodeValue):
         else:      
             searchNode(rootNode.rightChild, nodeValue) # O(n / 2)
 
-# Time:
-# Space:
 def minValueNode(bstNode):
     current = bstNode
     while (current.leftChild is not None):
@@ -95,8 +93,8 @@ def minValueNode(bstNode):
     return current
 
 
-# Time:
-# Space:
+# Time: O(log n)
+# Space: O(log n)
 def deleteNode(rootNode, nodeValue):
     if rootNode is None:
         return rootNode
@@ -119,6 +117,14 @@ def deleteNode(rootNode, nodeValue):
         rootNode.data = temp.data
         rootNode.rightChild = deleteNode(rootNode.rightChild, temp.data) # O(n / 2)
 
+# Time: O(1)
+# Space: O(1)
+def deleteBST(rootNode):
+    rootNode.data = None
+    rootNode.leftChild = None
+    rootNode.rightChild = None
+    return "The Binary Search Tree has been successfully deleted"
+
 
 
 newBST = BSTNode(None)
@@ -137,4 +143,6 @@ postOrderTraversal(newBST)
 levelOrderTraversal(newBST)
 searchNode(newBST, 60)
 deleteNode(newBST, 20)
+levelOrderTraversal(newBST)
+deleteBST(newBST)
 levelOrderTraversal(newBST)
