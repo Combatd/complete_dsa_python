@@ -51,6 +51,23 @@ def heapifyTreeInsert(rootNode, index, heapType):
             rootNode.customList[parentIndex] = temp
         heapifyTreeInsert(rootNode, parentIndex, heapType) # O(log n) to righ child
 
+# Time: O(log n)
+# Space: O(log n)
+def insertNode(rootNode, nodeValue, heapType):
+    if rootNode.heapSize + 1 == rootNode.maxSize: # O(1)
+        return "The Binary Heap is full"
+    rootNode.customList[rootNode.heapSize + 1] = nodeValue
+    rootNode.heapSize += 1
+    heapifyTreeInsert(rootNode, rootNode.heapSize, heapType) # O(log n)
+    return "The value has been successfully inserted" 
 
-newBinaryHeap = Heap(5)
-print(sizeOfHeap(newBinaryHeap))
+
+
+
+newHeap = Heap(5)
+# print(sizeOfHeap(newHeap))
+insertNode(newHeap, 4, "Max")
+insertNode(newHeap, 5, "Max")
+insertNode(newHeap, 2, "Max")
+insertNode(newHeap, 1, "Max")
+levelOrderTraversal(newHeap)
