@@ -41,6 +41,15 @@ class BinaryTree:
         print(self.customList[index])
         self.inOrderTraversal(index * 2 + 1)
 
+    # Time: O(n)
+    # Space: O(n)
+    def postOrderTraversal(self, index):
+        if index > self.lastUsedIndex:
+            return
+        self.postOrderTraversal(index * 2)
+        self.postOrderTraversal(index * 2 + 1)
+        print(self.customList[index])
+
 
 newBT = BinaryTree(8)
 print(newBT.insertNode("Drinks"))
@@ -54,3 +63,4 @@ print(newBT.searchNode("Hot"))
 
 newBT.preOrderTraversal(1)
 newBT.inOrderTraversal(1)
+newBT.postOrderTraversal(1)
