@@ -1,4 +1,7 @@
 
+from lib2to3.pytree import Node
+
+
 class TrieNode:
     def __init__(self):
         self.children = {}
@@ -24,6 +27,25 @@ class Trie:
         current.endOfString = True
         print("Successfully inserted " + str(word))
 
+    # Time: O(m) - where m is the number of characters
+    # Space: O(1)
+    def searchString(self, word):
+        currentNode = self.root
+        for i in word: # O(m)
+            node = currentNode.children.get(i)
+            if node == None:
+                return False
+            currentNode = node
+
+        if currentNode.endOfString == True:
+            return True
+        else:
+            return False
+    
+
+
 newTrie = Trie()
 newTrie.insertString("App")
 newTrie.insertString("Appl")
+print(newTrie.searchString("App"))
+print(newTrie.searchString("Ap"))
