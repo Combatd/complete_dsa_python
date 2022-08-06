@@ -23,10 +23,24 @@ class BinaryTree:
                 return "Success -> " + str(nodeValue)
         return "Not found"
 
+    # Time: O(n)
+    # Space: O(n)
+    def preOrderTraversal(self, index):
+        if index > self.lastUsedIndex:
+            return
+        print(self.customList[index])
+        self.preOrderTraversal(index * 2) # left child 2x, recursive O(n / 2)
+        self.preOrderTraversal(index * 2 + 1) # right child 2x + 1, recursive O(n / 2)
+
+
 newBT = BinaryTree(8)
 print(newBT.insertNode("Drinks"))
 newBT.insertNode("Hot")
 newBT.insertNode("Cold")
+newBT.insertNode("Tea")
+newBT.insertNode("Coffee")
 
 print(newBT.searchNode("Tea"))
 print(newBT.searchNode("Hot"))
+
+newBT.preOrderTraversal(1)
