@@ -61,8 +61,6 @@ def insertNode(rootNode, nodeValue, heapType):
     heapifyTreeInsert(rootNode, rootNode.heapSize, heapType) # O(log n)
     return "The value has been successfully inserted" 
 
-# Time:
-# Space:
 def heapifyTreeExtract(rootNode, index, heapType):
     leftIndex = index * 2
     rightIndex = index * 2 + 1
@@ -118,7 +116,10 @@ def extractNode(rootNode, heapType):
         heapifyTreeExtract(rootNode, 1, heapType) # O(log n)
         return extractedNode # O(1)
 
-
+# Time: O(1)
+# Space: O(1)
+def deleteEntireBP(rootNode):
+    rootNode.customList = None
 
 newHeap = Heap(5)
 # print(sizeOfHeap(newHeap))
@@ -128,3 +129,4 @@ insertNode(newHeap, 2, "Max")
 insertNode(newHeap, 1, "Max")
 print(extractNode(newHeap, "Max"), " <-- extractNode")
 levelOrderTraversal(newHeap)
+deleteEntireBP(newHeap)
