@@ -11,9 +11,9 @@ def insertionSort(customList):
             customList[j + 1] = customList[j]
             j -= 1
             customList[j + 1] = key
-    print(customList)
+    return customList
             
 
 
 cList = [2, 1, 7, 6, 5, 3, 4, 9, 8]
-insertionSort(cList)
+print(insertionSort(cList))
