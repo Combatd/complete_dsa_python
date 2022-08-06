@@ -183,10 +183,18 @@ def deleteNodeBT(rootNode, node):
                 customQueue.enqueue(root.value.rightChild)
         return "Failed to delete"
 
+# Time: O(1)
+# Space: O(1)
+def deleteBT(rootNode):
+    rootNode.data = None
+    rootNode.leftChild = None
+    rootNode.rightChild = None
+    return "The BT has been successfully deleted"
+
 
 
 deleteNodeBT(newBT, "Tea")
-levelOrderTraversal(newBT)
+# levelOrderTraversal(newBT)
 
 # deepestNode = getDeepestNode(newBT)
 # print(deepestNode.data, "<- deepestNode")
@@ -207,3 +215,6 @@ levelOrderTraversal(newBT)
 # newNode = getDeepestNode(newBT)
 # deleteDeepestNode(newBT, newNode)
 # levelOrderTraversal(newBT)
+
+deleteBT(newBT)
+levelOrderTraversal(newBT)
