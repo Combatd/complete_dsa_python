@@ -114,8 +114,8 @@ def insertNodeBT(rootNode, newNode):
                 return "Successfully inserted"
 
 
-    # Time: O(n)
-    # Space:
+# Time: O(n)
+# Space:
 def getDeepestNode(rootNode):
     if not rootNode:
         return
@@ -133,8 +133,40 @@ def getDeepestNode(rootNode):
             deepestNode = root.value
             return deepestNode
 
+# Time:
+# Space:
+def deleteDeepestNode(rootNode, dNode):
+    if not rootNode:
+        return
+    else:
+        customQueue = Queue()
+        customQueue.enqueue(rootNode)
+        while not(customQueue.isEmpty()):
+            root = customQueue.dequeue()
+            if root.value is dNode:
+                root.value = None
+                return
+            if root.value.rightChild:
+                if root.value.rightChild is dNode:
+                    root.value.rightChild = None
+                    return
+                else:
+                    customQueue.enqueue(root.value.rightChild)
+
+            if root.value.leftChild:
+                if root.value.leftChild is dNode:
+                    root.value.leftChild = None
+                    return
+                else:
+                    customQueue.enqueue(root.value.leftChild)
+
+
+
 deepestNode = getDeepestNode(newBT)
 print(deepestNode.data, "<- deepestNode")
+newNode = getDeepestNode(newBT)
+deleteDeepestNode(newBT, newNode)
+levelOrderTraversal(newBT)
 
 preOrderTraversal(newBT)
 inOrderTraversal(newBT)
@@ -144,4 +176,8 @@ print(searchBT(newBT, "Tea"))
 
 newNode = TreeNode("Cola")
 print(insertNodeBT(newBT, newNode))
+levelOrderTraversal(newBT)
+
+newNode = getDeepestNode(newBT)
+deleteDeepestNode(newBT, newNode)
 levelOrderTraversal(newBT)
