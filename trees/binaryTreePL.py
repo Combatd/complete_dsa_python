@@ -56,6 +56,18 @@ class BinaryTree:
         for i in range(index, self.lastUsedIndex + 1):
             print(self.customList[i])
 
+    # Time: O(n)
+    # Space: O(n)
+    def deleteNode(self, value):
+        if self.lastUsedIndex == 0: # O(1)
+            return "There is not any node to delete"
+        for i in range(1, self.lastUsedIndex + 1): # O(n)
+            if self.customList[i] == value:
+                self.customList[i] = self.customList[self.lastUsedIndex] # Swap Location
+                self.customList[self.lastUsedIndex] = None # Delete the Node
+                self.lastUsedIndex -= 1
+                return "The node has been successfully deleted"
+
 
 newBT = BinaryTree(8)
 print(newBT.insertNode("Drinks"))
@@ -70,4 +82,8 @@ print(newBT.searchNode("Hot"))
 newBT.preOrderTraversal(1)
 newBT.inOrderTraversal(1)
 newBT.postOrderTraversal(1)
+newBT.levelOrderTraversal(1)
+
+
+print(newBT.deleteNode("Tea"))
 newBT.levelOrderTraversal(1)
