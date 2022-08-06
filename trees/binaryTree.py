@@ -114,7 +114,27 @@ def insertNodeBT(rootNode, newNode):
                 return "Successfully inserted"
 
 
+    # Time: O(n)
+    # Space:
+def getDeepestNode(rootNode):
+    if not rootNode:
+        return
+    else:
+        customQueue = Queue()
+        customQueue.enqueue(rootNode)
+        while not(customQueue.isEmpty()):
+            root = customQueue.dequeue()
+            if root.value.leftChild is not None:
+                customQueue.enqueue(root.value.leftChild)
 
+            if root.value.rightChild is not None:
+                customQueue.enqueue(root.value.rightChild)
+                
+            deepestNode = root.value
+            return deepestNode
+
+deepestNode = getDeepestNode(newBT)
+print(deepestNode.data, "<- deepestNode")
 
 preOrderTraversal(newBT)
 inOrderTraversal(newBT)
