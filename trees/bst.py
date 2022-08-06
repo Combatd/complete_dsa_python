@@ -70,6 +70,26 @@ def levelOrderTraversal(rootNode):
             if root.value.rightChild is not None:
                 customQueue.enqueue(root.value.rightChild)
 
+# Time: O(log n) - will always be less than n in divide and conquer algorithm
+# Space: O(log n)
+def searchNode(rootNode, nodeValue):
+    if rootNode.data == nodeValue:
+        print('The value is found ', str(nodeValue))
+    elif nodeValue < rootNode.data:
+        if rootNode.leftChild.data == nodeValue:
+            print('The value is found ', str(nodeValue))
+        else:      
+            searchNode(rootNode.leftChild, nodeValue) # O(n / 2)
+    else:
+        if rootNode.rightChild.data == nodeValue:
+            print('The value is found ', str(nodeValue))
+        else:      
+            searchNode(rootNode.rightChild, nodeValue) # O(n / 2)
+
+
+
+
+
 newBST = BSTNode(None)
 print(insertNode(newBST, 70))
 print(insertNode(newBST, 50))
@@ -84,3 +104,4 @@ preOrderTraversal(newBST)
 inOrderTraversal(newBST)
 postOrderTraversal(newBST)
 levelOrderTraversal(newBST)
+searchNode(newBST, 60)
