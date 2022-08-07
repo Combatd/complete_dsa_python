@@ -1,8 +1,6 @@
 
-
-
-
-from cgitb import small
+# Time: O(n log n)
+# Space: O(1)
 
 
 def heapify(customList, n, i):
