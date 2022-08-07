@@ -53,6 +53,14 @@ class Graph:
             except ValueError:
                 pass
         return False
+
+    def remove_vertex(self, vertex):
+        if vertex in self.adjacency_list.keys():
+            for other_vertex in self.adjacency_list[vertex]:
+                self.adjacency_list[other_vertex].remove(vertex)
+            del self.adjacency_list[vertex]
+            return True
+        return False
     
 
 custom_graph = Graph()
@@ -68,8 +76,10 @@ my_graph.add_vertex("C")
 my_graph.add_vertex("D")
 my_graph.add_edge("A", "B")
 my_graph.add_edge("A", "C")
+my_graph.add_edge("A", "D")
 my_graph.add_edge("B", "C")
+my_graph.add_edge("C", "D")
 my_graph.print_graph()
-print(my_graph.remove_edge("A", "D"))
+print(my_graph.remove_vertex('D'), " <- Delete")
 print("Print after remove")
 my_graph.print_graph()
