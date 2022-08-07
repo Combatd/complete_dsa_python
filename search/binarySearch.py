@@ -6,6 +6,9 @@
     # if the midle is less than  the value move the left pointer up
 # If the value is never found return -1
 import math
+
+# Time: O(log n)
+# Space: O(1)
 def binarySearch(array, value):
     start = 0
     end = len(array) - 1
