@@ -60,6 +60,13 @@ class LinkedList:
       temp_node.next = new_node
     self.length += 1
     return True
+  
+  def traverse(self):
+    current = self.head
+    while current:
+      print(current.value)
+      current = current.next
+
     
 
 new_linked_list = LinkedList()
@@ -71,4 +78,4 @@ new_linked_list.prepend(40)
 print(new_linked_list)
 new_linked_list.insert(0, 50)
 new_linked_list.insert(7, 99999) # out of bounds, returns false
-print(new_linked_list)
+new_linked_list.traverse()
