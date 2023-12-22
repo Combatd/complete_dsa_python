@@ -67,6 +67,16 @@ class LinkedList:
       print(current.value)
       current = current.next
 
+  def search(self, target):
+    current = self.head
+    index = 0
+    while current:
+      if current.value == target:
+        return index
+      current = current.next
+      index += 1
+    return -1
+
     
 
 new_linked_list = LinkedList()
@@ -79,3 +89,5 @@ print(new_linked_list)
 new_linked_list.insert(0, 50)
 new_linked_list.insert(7, 99999) # out of bounds, returns false
 new_linked_list.traverse()
+print(new_linked_list.search(30)) # 4
+print(new_linked_list.search(99999)) # -1
