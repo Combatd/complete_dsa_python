@@ -76,6 +76,16 @@ class LinkedList:
       current = current.next
       index += 1
     return -1
+  
+  def get(self, index):
+    if index == -1:
+      return self.tail
+    if index < -1 or index >= self.length:
+      return None
+    current = self.head
+    for _ in range(index):
+      current = current.next
+    return current
 
     
 
@@ -91,3 +101,5 @@ new_linked_list.insert(7, 99999) # out of bounds, returns false
 new_linked_list.traverse()
 print(new_linked_list.search(30)) # 4
 print(new_linked_list.search(99999)) # -1
+print(new_linked_list.get(2))
+print(new_linked_list.get(10))
