@@ -86,6 +86,13 @@ class LinkedList:
     for _ in range(index):
       current = current.next
     return current
+  
+  def set_value(self, index, value):
+    temp = self.get(index)
+    if temp:
+      temp.value = value
+      return True
+    return False
 
     
 
@@ -103,3 +110,5 @@ print(new_linked_list.search(30)) # 4
 print(new_linked_list.search(99999)) # -1
 print(new_linked_list.get(2))
 print(new_linked_list.get(10))
+print(new_linked_list.set_value(2, 50))
+print(new_linked_list)
