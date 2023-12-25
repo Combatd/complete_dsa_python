@@ -32,11 +32,23 @@ class CSLinkedList:
       self.tail = new_node
     self.length += 1
 
+  def prepend(self, value):
+    new_node = Node(value)
+    if self.length == 0:
+      self.head = new_node
+      self.tail = new_node
+      new_node.next = new_node
+    else:
+      new_node.next = self.head
+      self.head = new_node
+      self.tail.next = new_node
+    self.length += 1
+
 csLinkedList = CSLinkedList()
 
-print(csLinkedList.append(10))
-print(csLinkedList.append(20))
-print(csLinkedList.append(30))
-print(csLinkedList.append(40))
-print(csLinkedList.append(50))
+csLinkedList.append(10)
+csLinkedList.append(20)
+print(csLinkedList)
+csLinkedList.prepend(30)
+csLinkedList.prepend(40)
 print(csLinkedList)
