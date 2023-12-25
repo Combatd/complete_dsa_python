@@ -16,6 +16,16 @@ class DoublyLinkedList:
     self.tail = None
     self.length = 0
 
+  def __str__(self):
+    temp_node = self.head
+    result = ''
+    while temp_node:
+      result += str(temp_node.value)
+      if temp_node.next is not None:
+        result += ' <-> '
+      temp_node = temp_node.next
+    return result
+
   def append(self, value):
     new_node = Node(value)
     if not self.head:
@@ -27,7 +37,8 @@ class DoublyLinkedList:
       self.tail = new_node
     self.length += 1
 
+
 newDLL= DoublyLinkedList()
 newDLL.append(10)
 newDLL.append(20)
-print(newDLL.head)
+print(newDLL)
