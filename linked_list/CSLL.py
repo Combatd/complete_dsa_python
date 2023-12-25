@@ -2,6 +2,9 @@ class Node:
   def __init__(self, value):
     self.value = value
     self.next = None
+  
+  def __str__(self):
+    return str(self.value)
 
 class CSLinkedList:
   def __init__(self):
@@ -88,6 +91,16 @@ class CSLinkedList:
         break
       index += 1
 
+  def get(self, index):
+    if index == -1:
+      return self.tail
+    elif index < -1 or index >= self.length:
+      return None
+    current = self.head
+    for _ in range(index):
+      current = current.next
+    return current
+
 csLinkedList = CSLinkedList()
 
 csLinkedList.append(10)
@@ -100,3 +113,6 @@ print(csLinkedList)
 csLinkedList.traversal()
 print(csLinkedList.search(50))
 print(csLinkedList.search(60))
+print(csLinkedList.get(2))
+print(csLinkedList.get(100))
+print(csLinkedList.get(-1))
