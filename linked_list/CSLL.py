@@ -9,6 +9,17 @@ class CSLinkedList:
     self.tail = None
     self.length = 0
 
+  def __str__(self):
+    temp_node = self.head
+    result = ''
+    while temp_node is not None:
+      result += str(temp_node.value)
+      temp_node = temp_node.next
+      if temp_node == self.head:
+        break
+      result += ' -> '
+    return result
+
   def append(self, value):
     new_node = Node(value)
     if self.length == 0:
@@ -25,5 +36,7 @@ csLinkedList = CSLinkedList()
 
 print(csLinkedList.append(10))
 print(csLinkedList.append(20))
-print(csLinkedList.head.value)
-print(csLinkedList.tail.value)
+print(csLinkedList.append(30))
+print(csLinkedList.append(40))
+print(csLinkedList.append(50))
+print(csLinkedList)
