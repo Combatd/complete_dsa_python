@@ -69,6 +69,13 @@ class CSLinkedList:
       temp_node.next = new_node
     self.length += 1
 
+  def traversal(self):
+    current = self.head
+    while current is not None:
+      print(current.value)
+      current = current.next
+      if current == self.head:
+        break
 
 csLinkedList = CSLinkedList()
 
@@ -79,3 +86,4 @@ csLinkedList.append(40)
 print(csLinkedList)
 csLinkedList.insert(2, 50)
 print(csLinkedList)
+csLinkedList.traversal()
