@@ -139,24 +139,44 @@ class CSLinkedList:
     self.length -= 1
     return popped_node
 
+  def remove(self, index):
+    if index < 0 or index >= self.length:
+      return None
+    elif index == 0:
+      return self.pop_first()
+    elif index == self.length - 1:
+      return self.pop()
+    prev_node = self.get(index - 1)
+    popped_node = prev_node.next
+    prev_node.next = popped_node.next
+    popped_node.next = None
+    self.length -= 1
+    return popped_node
+
 csLinkedList = CSLinkedList()
 
 csLinkedList.append(10)
 csLinkedList.append(20)
 csLinkedList.append(30)
 csLinkedList.append(40)
+
+# csLinkedList.insert(2, 50)
+# print(csLinkedList)
+# csLinkedList.traversal()
+# print(csLinkedList.search(50))
+# print(csLinkedList.search(60))
+# print(csLinkedList.get(2))
+# print(csLinkedList.get(100))
+# print(csLinkedList.get(-1))
+
+# print(csLinkedList.set_value(-1, 100))
+# print(csLinkedList)
+# print(csLinkedList.pop_first())
+# print(csLinkedList)
+# print(csLinkedList.pop())
+# print(csLinkedList)
+
 print(csLinkedList)
-csLinkedList.insert(2, 50)
+print(csLinkedList.remove(1))
 print(csLinkedList)
-csLinkedList.traversal()
-print(csLinkedList.search(50))
-print(csLinkedList.search(60))
-print(csLinkedList.get(2))
-print(csLinkedList.get(100))
-print(csLinkedList.get(-1))
-print(csLinkedList.set_value(-1, 100))
-print(csLinkedList)
-print(csLinkedList.pop_first())
-print(csLinkedList)
-print(csLinkedList.pop())
-print(csLinkedList)
+print(csLinkedList.tail.value)
