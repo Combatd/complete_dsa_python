@@ -137,6 +137,12 @@ class LinkedList:
     popped_node.next = None
     self.length -= 1
     return popped_node
+
+  def delete_all(self):
+    self.head = None
+    self.tail = None
+    self.length = 0
+
     
 
 new_linked_list = LinkedList()
@@ -160,4 +166,6 @@ print(new_linked_list)
 print(new_linked_list.pop())
 print(new_linked_list)
 print(new_linked_list.remove(0))
+print(new_linked_list)
+print(new_linked_list.delete_all())
 print(new_linked_list)
