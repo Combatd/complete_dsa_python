@@ -100,6 +100,13 @@ class CSLinkedList:
     for _ in range(index):
       current = current.next
     return current
+  
+  def set_value(self, index, value):
+    temp = self.get(index)
+    if temp:
+      temp.value = value
+      return True
+    return False
 
 csLinkedList = CSLinkedList()
 
@@ -116,3 +123,5 @@ print(csLinkedList.search(60))
 print(csLinkedList.get(2))
 print(csLinkedList.get(100))
 print(csLinkedList.get(-1))
+print(csLinkedList.set_value(-1, 100))
+print(csLinkedList)
