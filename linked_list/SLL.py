@@ -124,6 +124,19 @@ class LinkedList:
     self.length -= 1
     return popped_node
 
+  def remove(self, index):
+    if index >= self.length or index < 0:
+      return None
+    if index == 0:
+      return self.pop_first()
+    if index == self.length - 1 or index == -1:
+      return self.pop()
+    prev_node = self.get(index - 1)
+    popped_node = prev_node.next
+    prev_node.next = popped_node.next
+    popped_node.next = None
+    self.length -= 1
+    return popped_node
     
 
 new_linked_list = LinkedList()
@@ -145,4 +158,6 @@ print(new_linked_list)
 print(new_linked_list.pop_first())
 print(new_linked_list)
 print(new_linked_list.pop())
+print(new_linked_list)
+print(new_linked_list.remove(0))
 print(new_linked_list)
