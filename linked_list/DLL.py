@@ -48,6 +48,12 @@ class DoublyLinkedList:
       self.head = new_node
     self.length += 1
 
+  def traverse(self):
+    current_node = self.head
+    while current_node:
+      print(current_node.value)
+      current_node = current_node.next
+
 
 newDLL= DoublyLinkedList()
 newDLL.append(10)
@@ -57,3 +63,4 @@ print(newDLL)
 newDLL.prepend(50)
 newDLL.prepend(60)
 print(newDLL)
+newDLL.traverse()
