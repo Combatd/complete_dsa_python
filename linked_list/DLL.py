@@ -69,16 +69,33 @@ class DoublyLinkedList:
       current_node = current_node.next
       index += 1
     return -1
+  
+  def get(self, index):
+    if index < 0 or index >= self.length:
+      return None
+    if index < self.length // 2: # floor
+      current_node = self.head
+      for _ in range(index):
+        current_node = current_node.next
+    else:
+      current_node = self.tail
+      for _ in range(self.length - 1, index, -1):
+        current_node = current_node.prev
+    return current_node
+  
 
 newDLL= DoublyLinkedList()
 newDLL.append(10)
 newDLL.append(20)
 newDLL.append(30)
-print(newDLL)
+# print(newDLL)
 newDLL.prepend(50)
 newDLL.prepend(60)
-print(newDLL)
-newDLL.traverse()
-newDLL.reverse_traverse()
+# print(newDLL)
+# newDLL.traverse()
+# newDLL.reverse_traverse()
 print(newDLL.search(30))
 print(newDLL.search(999))
+print(newDLL.get(-1))
+newDLL.get(0)
+print(newDLL.get(6))
