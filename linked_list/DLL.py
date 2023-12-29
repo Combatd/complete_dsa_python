@@ -82,6 +82,15 @@ class DoublyLinkedList:
       for _ in range(self.length - 1, index, -1):
         current_node = current_node.prev
     return current_node
+
+  def set_value(self, index, value):
+    node = self.get(index)
+    if node:
+      node.value = value
+      return True
+    return False
+
+
   
 
 newDLL= DoublyLinkedList()
@@ -99,3 +108,5 @@ print(newDLL.search(999))
 print(newDLL.get(-1))
 newDLL.get(0)
 print(newDLL.get(6))
+print(newDLL.set_value(1, 100))
+print(newDLL)
