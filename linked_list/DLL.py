@@ -121,7 +121,21 @@ class DoublyLinkedList:
       popped_node.next = None
     self.length -= 1
     return popped_node
-
+  
+  def pop(self):
+    if not self.head:
+      return None
+    if self.length == 1:
+      self.head = None
+      self.tail = None
+      return popped_node
+    else:
+      popped_node = self.tail
+      self.tail = self.tail.prev
+      self.tail.next = None
+      popped_node.prev = None
+    self.length -= 1
+    return popped_node
 
   
 
@@ -144,4 +158,6 @@ print(newDLL.search(999))
 # print(newDLL)
 # newDLL.insert(2, 90)
 print(newDLL.pop_first())
+print(newDLL)
+print(newDLL.pop())
 print(newDLL)
