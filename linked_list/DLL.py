@@ -107,6 +107,21 @@ class DoublyLinkedList:
     temp_node.next = new_node
     self.length += 1
 
+  def pop_first(self):
+    if not self.head:
+      return None
+    popped_node = self.head
+    if self.length == 1:
+      self.head = None
+      self.tail = None
+      return popped_node
+    else:
+      self.head = self.head.next
+      self.head.prev = None
+      popped_node.next = None
+    self.length -= 1
+    return popped_node
+
 
   
 
@@ -122,9 +137,11 @@ newDLL.prepend(60)
 # newDLL.reverse_traverse()
 print(newDLL.search(30))
 print(newDLL.search(999))
-print(newDLL.get(-1))
-newDLL.get(0)
-print(newDLL.get(6))
-print(newDLL.set_value(1, 100))
+# print(newDLL.get(-1))
+# newDLL.get(0)
+# print(newDLL.get(6))
+# print(newDLL.set_value(1, 100))
+# print(newDLL)
+# newDLL.insert(2, 90)
+print(newDLL.pop_first())
 print(newDLL)
-newDLL.insert(2, 90)
