@@ -31,12 +31,27 @@ class Stack:
 
   # pop
   def pop(self):
-    pass
+    if self.isEmpty():
+      return 'There is not any element in the stack'
+    else:
+      return self.list.pop()
 
   # peek
   def peek(self):
-    pass
+    if self.isEmpty():
+      return 'There is not any element in the stack'
+    else:
+      return self.list[len(self.list) - 1]
 
   # delete
   def delete(self):
-    pass
+    self.list = None
+
+
+customStack = Stack(4)
+print(customStack.isEmpty())
+print(customStack.isFull())
+customStack.push(1)
+customStack.push(2)
+customStack.push(3)
+print(customStack)
