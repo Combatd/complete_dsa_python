@@ -53,7 +53,7 @@ class Stack:
 
   # delete
   def delete(self):
-    self.list = None
+    self.head = None
 
 
 
