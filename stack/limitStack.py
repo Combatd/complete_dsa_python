@@ -14,10 +14,20 @@ class Stack:
       return True
     else:
       return False
+  # isFull
+  def isFull(self):
+    if len(self.list) == self.maxSize:
+      return True
+    else:
+      return False
 
   # push
   def push(self, value):
-    pass
+    if self.isFull():
+      return 'The stack is full'
+    else:
+      self.list.append(value)
+      return 'The element has been successfully inserted'
 
   # pop
   def pop(self):
