@@ -45,7 +45,11 @@ class Stack:
 
   # peek
   def peek(self):
-    pass
+    if self.isEmpty():
+      return 'There is not any element in the stack'
+    else:
+      nodeValue = self.LinkedList.head.value
+      return nodeValue
 
   # delete
   def delete(self):
@@ -64,3 +68,4 @@ print("------")
 print(customStack.pop())
 print('------')
 print(customStack)
+print(customStack.peek())
