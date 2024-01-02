@@ -33,6 +33,11 @@ class Stack:
     else:
       return self.list[len(self.list) - 1]
 
+  # delete
+  def delete(self):
+    self.list = None
+  
+
 customStack = Stack()
 print(customStack.isEmpty())
 customStack.push(1)
